@@ -71,13 +71,16 @@ public class ExamPrepare {
             if (lst.rest == null) {
                 return;
             }
-
             IntList even = lst;
             IntList odd = lst.rest;
-            while () {
+            IntList oddHead = odd;
+            while (even.rest != null && odd.rest != null) {
                 even.rest = even.rest.rest;
                 odd.rest = odd.rest.rest;
+                even = even.rest;
+                odd = odd.rest;
             }
+            even.rest = oddHead;
         }
     }
 

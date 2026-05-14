@@ -46,5 +46,5 @@ public class SLList {
 //also have a pointer to the curr node, such that the user of the function passes in the sentinel
 //each time?
 
-//
+// abstraction barrier
 

@@ -1,5 +1,3 @@
-import jh61b.junit.In;
-
 import java.util.Arrays;
 
 public class ExamPrepare {

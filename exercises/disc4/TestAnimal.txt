@@ -1,3 +1,4 @@
+// a)
 public class TestAnimal {
    public static void main(String[] args) {
      Animal a = new Animal("Pluto", 10);
@@ -17,3 +18,7 @@ public class TestAnimal {
      c = a; // compile error
    }
  }
+// b)
+//Spoiler alert! There is an error on the last line, line 60. How could we fix this error?
+
+c = (Cat) a

@@ -1,0 +1,56 @@
+3 Challenge: A Puzzle
+Consider the partially filled classes for A and B as defined below:
+public class A {
+	public static void main(String[] args) {
+		A y = new B();
+		B z = new B();
+	}
+
+	int fish(A other) {
+		return 1;
+	}
+
+	int fish(B other) {
+	    return 2;
+	}
+}
+
+class B extends A {
+ @Override
+ int fish(B other) {
+	return 3;
+ }
+}
+Note that the only missing pieces of the classes above are static/dynamic types!
+Fill in the four blanks with the appropriate static/dynamic type — A or B — such
+that the following are true:
+1. y.fish(z) equals z.fish(z) ->
+2. z.fish(y) equals y.fish(y)
+3. z.fish(z) does not equal y.fish(y)
+
+z.finish(y) = y finish(y)
+z.finish(z) != y.finish(y)
+
+-> z.finish(y) != z.finish(z)
+   y.finish(z) != y.finish(y)
+
+Giả sử z có kiểu tĩnh là A
+TH1: kiểu động của z là B, nghĩa là A z = new B();
+lúc này z.finish(y) != z.finish(z) trở thành: A.finish(y) != A.finish(A) (trả về 3) -> A.finish(y) trả về 1 hoặc 2
+
+TH2: kiểu động của z cũng là A, nghĩa là A z = new A();
+-> A.finish(y) != A.finish(A) (trả về 1) nghĩa là A.finish(y) trả về 2 hoặc 3, mà z.finish(z) = y.finish(z) nên y.finish(A) trả về 1
+-> nghĩa là kiểu động của y là A hay: A y = new A();
+
+A A A A
+A A A B
+A A B B
+
+A B A A
+A B A B
+A B B B
+
+B B A A
+B B A B
+B B B B
+

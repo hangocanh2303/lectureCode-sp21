@@ -1,0 +1,47 @@
+#4 Senior Class Extra
+#For each line in the main method of our testPeople class, if something is printed, write it next to the
+#line. If the line results in an error, write next it whether it is a compile time error or runtime error, and
+#then proceed as if that line were not there.
+public class Person {
+    public String name;
+    public int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void greet(Person other) {
+         System.out.println("Hello, " + other.name);
+    }
+ }
+
+
+ public class Grandma extends Person {
+
+     public Grandma(String name, int age) {
+        super(name, age);
+     }
+
+     @Override
+     public void greet(Person other) {System.out.println("Hello, young whippersnapper");}
+
+     public void greet(Grandma other) {System.out.println("How was bingo, " + other.name + "?");}
+ }
+
+ public class testPeople {
+     public static void main(String[] args) {
+         Person n = new Person("Neil", 12);
+         Person a = new Grandma("Ada", 60);
+         Grandma v = new Grandma("Vidya", 80);
+         Grandma al = new Person("Alex", 70); // CE
+         n.greet(a); // Hello, Ada
+         n.greet(v); // solution: Hello, Vidya //  CE (wrong) n is Person, v is Grandma, but Granma is a Person -> accepted
+         v.greet(a); // Hello, young whippersnapper Step 1: V is Grandma, a is Person -> select greet(Person other)
+         v.greet((Grandma) a); // How was bingo, Ada?
+         a.greet(n); // Hello, young whippersnapper Step 1: a: Person, n is person -> select greet(Person other) Step 2: a is Granma, n is person -> select override in Grandma class
+         a.greet(v); // Hello, young whippersnapper CE (wrong) solution: a is a Person, v is Grandma -> select Person other, step 2: a is granma -> check in Grandma class if it override Person other -> print
+         ((Grandma) a).greet(v); // How was bingo, Vidya?
+         ((Grandma) n).greet(v); // RE
+     }
+ }

@@ -1,0 +1,13 @@
+a) (8 points). Consider the code below.
+    public static int f(int x) {
+         if (x == 1) {
+            return 1;
+         }
+         return 2 * f(x / 2);
+    }
+Describe as succinctly as possible what this method does when executed for all possible values of x. If
+the behavior is different depending on x, describe the behavior in every interesting case. Remember that
+integer division in Java rounds down, i.e. 3/2 yields 1.
+
+if x <= 0 -> infinity loop recursive
+if x > 0 -> largest power of 2 less than or equal to x

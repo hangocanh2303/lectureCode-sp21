@@ -11,3 +11,20 @@ integer division in Java rounds down, i.e. 3/2 yields 1.
 
 if x <= 0 -> infinity loop recursive
 if x > 0 -> largest power of 2 less than or equal to x
+
+b) (4 points). Consider the code below.
+    public static void g(IntList x) {
+        if (x == null) { return; }
+        g(x.rest);
+        x.rest = x;
+    }
+Draw a box and pointer diagram that shows the result of executing the following two lines of code. If any
+objects are not referenced by anything else (i.e. are garbage collected), you may omit drawing them if you
+prefer. If you need it, the IntList definition is on page 7. If g never finishes because it gets stuck in an
+infinite loop, write “Infinite Loop” instead of drawing a diagram.
+
+    IntList L = IntList.of(3, 4, 5); //creates an IntList containing 3, 4, and 5
+    g(L);
+
+Answer:
+

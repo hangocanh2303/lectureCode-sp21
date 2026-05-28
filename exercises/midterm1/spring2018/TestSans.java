@@ -1,6 +1,6 @@
 package spring2018;
 
-import jh61b.junit.In;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 //    d) (12 points). Suppose we want to write tests for and sans and ilsans. Fill in the code below with a

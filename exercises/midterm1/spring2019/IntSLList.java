@@ -1,0 +1,95 @@
+package spring2019;
+
+public class IntSLList {
+    private static class IntNode {
+        public int item;
+        public IntNode next;
+
+        public IntNode(int i, IntNode n) {
+            item = i;
+            next = n;
+            // System.out.println(size);
+        }
+    }
+
+    /* The first item (if it exists) is at sentinel.next. */
+    private IntNode sentinel;
+    private int size;
+
+
+
+    /**
+     * Creates an empty SLList.
+     */
+    public IntSLList() {
+        sentinel = new IntNode(63, null);
+        size = 0;
+    }
+
+    public IntSLList(int[] x) {
+        sentinel = new IntNode(63, null);
+        size = 0;
+        IntNode p = sentinel;
+
+        for (int j: x) {
+            p.next = new IntNode(j, null);
+            p = p.next;
+            size = size + 1;
+        }
+    }
+
+    public IntSLList(int x) {
+        sentinel = new IntNode(63, null);
+        sentinel.next = new IntNode(x, null);
+        size = 1;
+    }
+
+    /**
+     * Adds x to the front of the list.
+     */
+    public void addFirst(int x) {
+        sentinel.next = new IntNode(x, sentinel.next);
+        size = size + 1;
+    }
+
+    /**
+     * Returns the first item in the list.
+     */
+    public int getFirst() {
+        return sentinel.next.item;
+    }
+
+    /**
+     * Adds x to the end of the list.
+     */
+    public void addLast(int x) {
+        size = size + 1;
+
+        IntNode p = sentinel;
+
+        /* Advance p to the end of the list. */
+        while (p.next != null) {
+            p = p.next;
+        }
+
+        p.next = new IntNode(x, null);
+    }
+
+    /** Delete first item of the list */
+    public void deleteFirst() {
+        if (sentinel.next == null) {
+            return;
+        }
+        sentinel.next = sentinel.next.next;
+        size = size - 1;
+    }
+
+
+    /**
+     * Returns the size of the list.
+     */
+    public int size() {
+        return size;
+    }
+
+}

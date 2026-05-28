@@ -10,7 +10,11 @@ public class IntList {
 		rest = r;
 	}
 
-	/** Return the size of the list using... recursion! */
+    public static IntList of(int[] ints) {
+		return null;
+    }
+
+    /** Return the size of the list using... recursion! */
 	public int size() {
 		if (rest == null) {
 			return 1;

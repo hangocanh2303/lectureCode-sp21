@@ -1,6 +1,8 @@
 package spring2019;
 
 
+import java.util.Objects;
+
 public class IntList {
 	public int first;
 	public IntList rest;
@@ -10,11 +12,33 @@ public class IntList {
 		rest = r;
 	}
 
-    public static IntList of(int[] ints) {
-		return null;
-    }
+//	public static IntList of(int[] ints) {
+//		if (ints == null || ints.length == 0) {
+//			return null;
+//		}
+//		IntList result = new IntList(ints[ints.length - 1], null);
+//		for (int i = ints.length - 2; i >= 0; i--) {
+//			result = new IntList(ints[i], result);
+//		}
+//		return result;
+//	}
 
-    /** Return the size of the list using... recursion! */
+	public static IntList of(int... ints) {
+
+		if (ints == null || ints.length == 0) {
+			return null;
+		}
+
+		IntList result = new IntList(ints[ints.length - 1], null);
+
+		for (int i = ints.length - 2; i >= 0; i -= 1) {
+			result = new IntList(ints[i], result);
+		}
+
+		return result;
+	}
+
+	/** Return the size of the list using... recursion! */
 	public int size() {
 		if (rest == null) {
 			return 1;
@@ -39,6 +63,12 @@ public class IntList {
 			return first;
 		}
 		return rest.get(i - 1);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof IntList intList)) return false;
+        return first == intList.first && Objects.equals(rest, intList.rest);
 	}
 
 	public static void main(String[] args) {

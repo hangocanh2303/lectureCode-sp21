@@ -31,13 +31,12 @@ public interface MT1List<T> {
     }
 
     default public void reverse() {
-        if (size() <= 1) {
-            return;
+        if (size() > 0) {
+            T firstItem = get(0);
+            remove(0);
+            reverse();
+            addLast(firstItem);
         }
-        T firstItem = get(0);
-        remove(0);
-        reverse();
-        addLast(firstItem);
     }
 
     default public void reverseOther() {

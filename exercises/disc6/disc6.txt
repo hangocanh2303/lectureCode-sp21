@@ -1,0 +1,46 @@
+(c) Give the worst case and best case runtime in terms of M and N. Assume ping is in Θ(1) and
+returns an int.
+    for (int i = N; i > 0; i--) {
+        for (int j = 0; j <= M; j++) {
+            if (ping(i, j) > 64) break;
+        }
+    }
+
+Answer:
+worst case: O(M*N)
+best case: O(1) -> wrong O(N)
+
+
+(d) Below we have a function that returns true if every int has a duplicate in the array, and false if
+there is any unique int in the array. Assume sort(array) is in Θ(N log N) and returns array
+sorted.
+ public static boolean noUniques(int[] array) {
+    array = sort(array);
+    int N = array.length;
+    for (int i = 0; i < N; i += 1) {
+        boolean hasDuplicate = false;
+        for (int j = 0; j < N; j += 1) {
+            if (i != j && array[i] == array[j]) {
+                hasDuplicate = true;
+            }
+        }
+        if (!hasDuplicate) return false;
+    }
+    return true;
+ }
+1. Give the worst case and best case runtime where N = array.length
+worst case:  O(N^2) = Θ(N log N + N^2)
+best case: O(N) = Θ(N log N + N)
+2. Try to come up with a way to implement noUniques() that runs in Θ(NlogN) time. Can we
+get any faster?
+
+public static boolean noUniques(int[] array) {
+    array = sort(array);
+    int N = array.length;
+    for (int i = 0; i < N - 1; i += 1) {
+        if (array[i] == array[i+1]) {
+             return true;
+        }
+    }
+    return false;
+ }

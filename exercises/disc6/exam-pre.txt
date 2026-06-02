@@ -65,3 +65,88 @@ F. a[i]: -7 0 0 1 1 3 3 -3 7 7
 
 Draw tree for best explain
 
+
+3 Asymptotics of Weighted Quick Unions
+
+
+For this problem, we will be addressing the asymptotics of Weighted Quick Unions!
+For all big Ω and big O bounds, give the tightest bound possible.
+(a) Suppose we have a Weighted Quick Union (WQU) without path compression
+with N elements.
+1. What is the runtime, in big Ω and big O, of isConnected?
+    Ω(1), O(logN)
+2. What is the runtime, in big Ω and big O, of connect?
+    Ω(1), O(logN)
+
+
+(b) Suppose for the following problem we add the method addToWQU to the WQU
+class. Simply put, the method takes in a list of elements and randomly
+connects elements together. Assume that all the elements are disconnected
+before the method call, and the connect method works as described in lecture.
+    void addToWQU(int[] elements) {
+        int[][] pairs = pairs(elements);
+        pairs = shuffle(pairs);
+        for (int[] pair: pairs) {
+            connect(pair[0], pair[1]);
+        }
+    }
+In a bit more detail, the pairs method accepts an array and returns an ordered
+array of all unique pairs, where each pair is a 2 element array. For instance,
+  pairs(new int[]{1, 2, 3})
+would return
+  {{1, 2}, {1, 3}, {2, 3}}
+The shuffle method shuffles the ordering of the elements, and returns a new
+array. For instance,
+  shuffle(new int[]{{1, 2}, {1, 3}, {2, 3}})
+might return
+  {{1, 3}, {2, 3}, {1, 2}}
+Assume, for simplicity, that pairs and shuffle run in constant time (admittedly this couldn’t be the case, but assume so for the sake of this problem).
+What is the runtime of addToWQU in big O? For this and all remaining subparts
+you may write your answer in terms of N, where N is elements.length.
+
+number of pairs: C 2 of N = N! / k! (N-k)! = N! / 2! (N - 2)! = N (N - 1) / 2
+with each pair -> connect using logN
+-> N (N - 1) logN / 2 = N^2 logN
+
+addToWQU runtime: O(n^2logN)
+
+
+
+For the remainder of this problem, suppose we are using the modified version of
+addToWQU as defined below. Note the only difference is the added if condition.
+void addToWQU(int[] elements) {
+    int[][] pairs = pairs(elements);
+    pairs = shuffle(pairs);
+    for (int[] pair: pairs) {
+        if (size() == elements.length) {
+            return;
+        }
+        connect(pair[0], pair[1]);
+    }
+ }
+Assume the method size calculates the size of the largest connected component
+and runs in constant time (this can be easily implemented with adding an
+instance variable to the class).
+(c) What is the runtime of addToWQU in big Ω and big O?
+N = 3, số cách là 3 {1, 2}, {1, 3} kích thước thành phần liên thông lớn nhất là 3 chỉ với 2 lượt connect
+
+N = 4, số cách là 6 {1, 2} {1, 3} {1, 4} kích thước thành phần liên thông lớn nhất là 4 chỉ với 3 lượt connect
+
+N = 5, số cách là 10 ... 4 lượt connect
+
+N số cách là N(N - 1) /2 với N - 1 lượt connect
+
+số pairs chạy là N(N - 1) / 2
+
+Trường hợp tốt nhất: các pairs tối ưu nên chỉ cần connect đúng N - 1 lần, nghĩa là vòng for chạy N - 1 lần là dừng, với connected >= O(1) nên tổng thể >= omega(N)
+Trường hợp xấu nhất: các pairs không tối ưu nên phải chạy hết pairs <= O(n2logn)
+
+Ω(N), O(n^2logn)
+(d) Let us define a matching size connection as connecting two trees, i.e. components in a WQU, together of matching size. For instance, suppose we have
+two trees, one with values 1 and 2, and another with the values 3 and 4. Calling
+connect(1, 4) is a matching size connection since both trees are the same size.
+What is the minimum and maximum number of matching size connections
+that can occur after executing addToWQU. Assume N, i.e. elements.length, is
+a power of two. Your answers should be exact.
+minimum: 1 or omega(1), maximum: logN
+

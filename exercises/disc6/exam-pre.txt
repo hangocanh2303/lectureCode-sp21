@@ -1,0 +1,67 @@
+1 Asymptotics Introduction
+Give the runtime of the following functions in Θ notation. Your answer should be
+as simple as possible with no unnecessary leading constants or lower order terms.
+private void f1(int N) {
+    for (int i = 1; i < N; i++) {
+        for (int j = 1; j < i; j++) {
+            System.out.println("hello tony");
+        }
+    }
+}
+(N - 1) * (0 + 1 + 2 + ... + (N - 1)) ~ N * N * (N + 1) / 2 ~ N^3 ? -> wrong
+
+i = 1 -> 0
+i = 2 -> 1
+i = N - 1 -> N - 2
+-> N * (N + 1) / 2 -> N^2
+Θ(n^2)
+
+private void f2(int N) {
+    for (int i = 1; i < N; i *= 2) {
+        for (int j = 1; j < i; j++) {
+            System.out.println("hello hannah");
+        }
+    }
+}
+i = 1 -> 0
+i = 2 -> 1
+i = 4 -> 3
+i = 8 -> 7
+i = 16 -> 15
+i = 32 -> 31
+
+i = 2^k < N -> k = logN
+0 + 1 + 3 + 7 + 15 + 31 + ... + (2^k - 1) ~ 2^k
+2^k ~ N
+Θ(n)
+
+
+2 Disjoint Sets
+For each of the arrays below, write whether this could be the array representation
+of a weighted quick union with path compression and explain your reasoning.
+      i: 0 1 2 3 4 5 6 7 8 9
+------------------------------------------
+A. a[i]: 1 2 3 0 1 1 1 4 4 5
+      i: 0 1 2 3 4 5 6 7 8 9
+-> No, circle, no parent, height large
+
+B. a[i]: 9 0 0 0 0 0 9 9 9 -10
+      i: 0 1 2 3 4 5 6 7 8  9
+-> root 0 larger than root 9: 9 joint 0
+C. a[i]: 1 2 3 4 5 6 7 8 9 -10
+      i: 0 1 2 3 4 5 6 7 8  9
+-> No, height
+
+D. a[i]: -10 0 0 0 0 1 1 1 6 2
+        i: 0 1 2 3 4 5 6 7 8 9
+-> yes
+
+E. a[i]: -10 0 0 0 0 1 1 1 6 8
+        i: 0 1 2 3 4 5 6 7 8 9
+-> No, height
+F. a[i]: -7 0 0 1 1 3 3 -3 7 7
+       i: 0 1 2 3 4 5 6  7 8 9
+-> No, height
+
+Draw tree for best explain
+

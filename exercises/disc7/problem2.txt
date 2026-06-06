@@ -1,0 +1,15 @@
+2 I Am Speed
+Give the worst case and best case running time in Θ(·) notation in terms of M and N. Assume that
+comeOn() is in Θ(1) and returns a boolean.
+for (int i = 0; i < N; i += 1) {
+    for (int j = 1; j <= M; ) {
+        if (comeOn()) {
+           j += 1;
+        } else {
+           j *= 2;
+        }
+    }
+}
+Answer:
+best case: comeOn() always false -> theta(NlogM)
+worst case: comeOn() always true -> theta(M*N)

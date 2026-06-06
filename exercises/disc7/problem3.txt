@@ -1,0 +1,50 @@
+public class problem3 {
+//    3Re- cursed with Asymptotics!
+
+    // (a) What is the runtime of the code below in terms of n?
+    public static int[] curse(int n) {
+        if (n <= 0) {
+            return 0;
+        } else {
+            return n + curse(n - 1);
+        }
+    }
+    Answer: theta(n)
+
+//(b) Assume our BST (Binary Search Tree) below is perfectly bushy. What is the runtime of a single
+//    find operation in terms of N, the number of nodes in the tree? In this setup, assume a Tree has a
+//    Key (the value of the tree) and then pointers to two other trees, Left and Right.
+
+    public static BST find(BST T, Key sk) {
+        if (T == null)
+            return null;
+        if (sk.compareTo(T.key) == 0))
+        return T;
+         else if (sk.compareTo(T.key) < 0)
+            return find(T.left, sk);
+        else
+            return find(T.right, sk);
+
+    }
+    Answer: O(logn) because max time to find is logN time
+//(c) Can you find a runtime bound for the code below? We can assume the System.arraycopy method
+//    takes Θ(N) time, where N is the number of elements copied. The official signature is System.
+//    arrayCopy(Object sourceArr, int srcPos, Object dest, int destPos, int length). Here, srcPos
+//    and destPos are the starting points in the source and destination arrays to start copying and pasting
+//    in, respectively, and length is the number of elements copied.
+
+    public static void silly(int[] arr) {
+        if (arr.length <= 1) {
+            System.out.println("You won!");
+            return;
+
+        }
+        int newLen = arr.length / 2;
+        int[] firstHalf = new int[newLen];
+        int[] secondHalf = new int[newLen];
+        System.arraycopy(arr, 0, firstHalf, 0, newLen);
+        System.arraycopy(arr, newLen, secondHalf, 0, newLen);
+        silly(firstHalf);
+        silly(secondHalf);
+    }
+}

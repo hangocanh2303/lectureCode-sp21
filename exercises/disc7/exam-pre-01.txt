@@ -1,0 +1,27 @@
+//1 Asymptotics is Fun!
+//(a) Using the function g defined below, what is the runtime of the following function calls? Write each answer in terms of N.
+void g(int N, int x) {
+    if (N == 0) {
+        return;
+    }
+    for (int i = 1; i <= x; i++) {
+        g(N - 1, i);
+    }
+}
+//g(N, 1): Θ(N)
+//g(N, 2): Θ(N^2)
+
+//(b) Suppose we change line 6 to g(N - 1, x) and change the stopping condition
+//in the for loop to i <= f(x) where f(x) returns a random number between 1
+//and x, inclusive. For the following function calls, find the tightest Ω and big
+//O bounds.
+void g(int N, int x) {
+    if (N == 0) {
+        return;
+    }
+    for (int i = 1; i <= f(x); i++) {
+        g(N - 1, x);
+    }
+}
+//g(N, 2): Ω(N), O(2^N)
+//g(N, N): Ω(N), O(N^N)

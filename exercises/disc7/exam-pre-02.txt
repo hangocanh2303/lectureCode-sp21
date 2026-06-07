@@ -1,0 +1,37 @@
+2 Flip Flop
+Suppose we have the flip function as defined below. Assume the method unknown
+returns a random integer between 1 and N, exclusive, and runs in constant time.
+For each definition of the flop method below, give the best and worst case runtime
+of flip in Θ(.) notation as a function of N.
+public static void flip(int N) {
+    if (N <= 100) {
+        return;
+    }
+    int stop = unknown(N);
+    for (int i = 1; i < N; i++) {
+        if (i == stop) {
+            flop(i, N);
+            return;
+         }
+     }
+ }
+(a)
+public static void flop(int i, int N) {
+    flip(N - i);
+}
+Best Case: Θ(), Worst Case: Θ()
+
+(b)
+public static void flop(int i, int N) {
+    int minimum = Math.min(i, N - i);
+    flip(minimum);
+    flip(minimum);
+}
+Best Case: Θ(), Worst Case: Θ()
+
+(c)
+public static void flop(int i, int N) {
+    flip(i);
+    flip(N - i);
+}
+Best Case: Θ(), Worst Case: Θ()

@@ -1,0 +1,17 @@
+3 Prime Factors
+Determine the best and worst case runtime of prime_factors in Θ(.) notation as a
+function of N.
+int prime_factors(int N) {
+    int factor = 2;
+    int count = 0;
+    while (factor * factor <= N) {
+        while (N % factor == 0) {
+            System.out.println(factor);
+            count += 1;
+            N = N / factor;
+        }
+        factor += 1;
+     }
+     return count;
+ }
+Best Case: Θ(logN), Worst Case: Θ(sqrt(N))

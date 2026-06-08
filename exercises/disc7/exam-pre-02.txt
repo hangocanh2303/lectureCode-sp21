@@ -19,7 +19,7 @@ public static void flip(int N) {
 public static void flop(int i, int N) {
     flip(N - i);
 }
-Best Case: Θ(), Worst Case: Θ()
+Best Case: Θ(N), Worst Case: Θ(N)
 
 (b)
 public static void flop(int i, int N) {
@@ -27,11 +27,11 @@ public static void flop(int i, int N) {
     flip(minimum);
     flip(minimum);
 }
-Best Case: Θ(), Worst Case: Θ()
+Best Case: Θ(1), Worst Case: Θ(NlogN)
 
 (c)
 public static void flop(int i, int N) {
     flip(i);
     flip(N - i);
 }
-Best Case: Θ(), Worst Case: Θ()
+Best Case: Θ(N), Worst Case: Θ()

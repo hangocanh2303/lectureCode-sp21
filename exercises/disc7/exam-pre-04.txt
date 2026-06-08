@@ -1,0 +1,22 @@
+4 ADT Selection
+Suppose we have a TA Shreyas who teaches multiple discussion sections! A student
+may frequent more than one discussion section. For each situation below, choose
+the best ADT(s) out of the following — Map, Set, List — and explain how you can
+use the ADT(s) to solve the problem. Each subpart is independent of the previous.
+One answer may involve multiple ADTs. There may be mutliple efficient answers
+for each problem.
+1. Storing all the Students in Shreyas’s first section in alphabetical order.
+List
+2. Storing all the Students by their section, where Students within a section are
+sorted alphabetically.
+Map<section, List<Student>)
+3. Storing the Students in all of Shreyas’s sections. There shouldn’t be duplicates.
+Set
+4. Determining all the Students that attend more than one of Shreyas’s sections.
+Map<student, count>
+5. Quickly getting a Student by sid.
+Map<sid, student>
+6. Quickly getting a Student by name or sid. Names aren’t necessarily unique.
+twos map
+7. Cycling through the Students in one discussion section.
+get list student by section and loop

@@ -1,0 +1,18 @@
+1 Asymptotic Warm Up
+Give the tightest asymptotic bound on foo(n).
+public int foo(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    bloop(n);
+    return foo(n / 3) + foo(n / 3) + foo(n / 3);
+}
+
+public int bloop(int n) {
+     for (int i = 0; i < n; i += 1) {
+         System.out.println("Ah, loops too");
+     }
+     return n;
+ }
+
+theta(nlogn)

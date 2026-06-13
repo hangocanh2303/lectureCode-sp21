@@ -1,0 +1,59 @@
+2 Asymptotic Potpourri
+Note: These are hard problems. If you are stuck on it for a long time, move on to
+other problems, and post on Ed or come to Office Hours so we can help you.
+For the following methods, give the runtime of in Θ notation. Your answer should be
+a function of N that is as simple as possible with no unnecessary leading constants
+or lower order terms.
+(a) Give the runtime of mystery1(n) in Θ notation.
+
+public void mystery1(int n) {
+    for (int i = n; i > 0; i = i / 2) {
+        for (int j = 0; j < 100000000; j += 2) {
+            System.out.println("Hello World");
+        }
+    }
+}
+
+theta(logn)
+
+(b) Give the runtime of mystery2(n) in Θ notation.
+
+public void mystery2(int n) {
+    for (int i = 1; i < n; i += 1) {
+        for (int j = 0; j < n; j += 1) {
+            i = i * 2;
+            j = j * 2;
+        }
+    }
+}
+
+theta(logn)
+
+(c) What sum represents the work done by mystery3(n)? No need to simplify the
+sum, just write out the first few terms and the last term.
+
+
+public void mystery3(int n) {
+    for (int i = n; i > 0; i = i / 2) {
+        for (int j = 1; j < i * i; j *= 2) {
+            System.out.println("Hello World");
+        }
+    }
+}
+
+theta(logn^2) + theta(log(n/2)^2) + ....
+
+(d) Give the runtime of mystery4(n) in Θ notation. Assume that the SLList
+constructor, and the size and addFirst methods take constant time.
+
+public void mystery4(int n) {
+    SLList<Integer> list = new SLList<>();
+    for (int i = 1; list.size() < n; i += 1) {
+        for (int j = 0; j < i; j += 1) {
+            list.addFirst(j);
+        }
+        System.out.print(list.size() + " + ");
+    }
+}
+theta(n)
+

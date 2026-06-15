@@ -1,0 +1,8 @@
+c. If a 2-3 tree has depth H (that is, there are H number of edges in the path
+from leaf to the root), what is the maximum number of comparisons done in
+the corresponding red-black tree to find whether a certain key is present in the
+tree?
+
+Answer: 2H + 2
+2-3 tree contain H + 1 node
+-> worst case llrb tree, each node contain 2 items -> double number of 2-3 tree node -> 2 *(H + 1) = 2H + 2

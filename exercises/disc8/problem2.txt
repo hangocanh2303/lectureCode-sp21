@@ -1,0 +1,14 @@
+(a) Here are three potential implementations of the Integer’s hashCode() function.
+Categorize each as either a valid or an invalid hash function. If it is invalid,
+explain why. If it is valid, point out a flaw or disadvantage. For the 2nd
+implementation, note that intValue() will return that Integer’s number value
+as an int.
+public int hashCode() {
+    return -1; // valid but theta(N) -> one bucket hash
+}
+public int hashCode() {
+    return intValue() * intValue(); // valid but increase collisions
+}
+public int hashCode() {
+    return super.hashCode(); // invalid because dependent hashCode of super class, worst case -> hashCode use memory address -> wrong
+}

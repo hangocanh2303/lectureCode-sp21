@@ -1,0 +1,23 @@
+3 A Side of Hashbrowns
+We want to map food items to their yumminess. We want to be able to find this
+information in constant time, so we’ve decided to use java’s built-in HashMap class!
+Here, the key is an String representing the food item and the value is an int
+yumminess rating.
+For simplicity, let’s say that here a String’s hashcode is the first letter’s position
+in the alphabet (A = 0, B = 1... Z = 25). For example, the String ”hashbrown”
+starts with ”h”, and ”h” is 7th letter in the alphabet (0 indexed), so the hashCode
+would be 7. Note that in reality, a String has a much more complicated hashCode()
+implementation.
+Our hashMap will compute the index as the key’s hashcode value modulo the number of buckets in our HashMap. Assume the initial size is 4 buckets, and we double
+the size our HashMap as soon as the load factor reaches 3/4.
+(a) Draw what the HashMap would look like after the following operations.
+    HashMap<Integer, String> hm = new HashMap<>();
+    hm.put("Hashbrowns", 7);
+    hm.put("Dim sum", 10);
+    hm.put("Escargot", 5);
+    hm.put("Brown bananas", 1);
+    hm.put("Burritos", 10);
+    hm.put("Buffalo wings", 8);
+    hm.put("Banh mi", 9);
+(b) Do you see a potential problem here with the behavior of our hashmap? How
+could we solve this?

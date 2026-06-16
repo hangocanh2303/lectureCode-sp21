@@ -1,0 +1,45 @@
+4 Buggy Hash
+The following classes may contain a bug in one of its methods. Identify those errors
+and briefly explain why they are incorrect and in which situations would the bug
+cause problems.
+
+class Timezone {
+    String timeZone; // "PST", "EST" etc.
+    boolean dayLight;
+    String location;
+    ...
+    public int currentTime() {
+        // return the current time in that time zone
+    }
+    public int hashCode() {
+         return currentTime();
+    }
+    public boolean equals(Object o) {
+         Timezone tz = (Timezone) o;
+         return tz.timeZone.equals(timeZone);
+    }
+}
+class Course {
+    int courseCode;
+    int yearOffered;
+    String[] staff;
+    ...
+    public int hashCode() {
+        return yearOffered + courseCode;
+    }
+    public boolean equals(Object o) {
+        Course c = (Course) o;
+        return c.courseCode == courseCode;
+    }
+}
+
+1. Xác định phương thức nào chứa lỗi (nếu có):
+Course: hashCode
+TimeZone: hashCode
+
+2. Giải thích ngắn gọn vì sao cách cài đặt đó là không chính xác:
+Course: course code equals but hashCode can not equals
+TimeZone: timezone hash code change by current time
+3. Mô tả các trường hợp mà lỗi này có thể gây ra vấn đề khi sử dụng đối tượng trong các cấu trúc dữ liệu dựa trên hashing (ví dụ như HashMap hoặc HashSet):
+
+

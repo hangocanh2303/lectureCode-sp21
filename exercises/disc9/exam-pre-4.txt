@@ -1,0 +1,9 @@
+4 Cycle Detection
+Given an undirected graph, provide an algorithm that returns true if a cycle exists
+in the graph, and false otherwise. Also, provide a Θ bound for the worst case
+runtime of your algorithm. You may use either an adjacency list or an adjacency
+matrix to represent your graph. (We are looking for an answer in plain English, not
+code).
+
+Answer:
+Dùng dfs duyệt đỉnh, nếu gặp một đỉnh đã thăm mà không phải đỉnh cha thì là có chu trình

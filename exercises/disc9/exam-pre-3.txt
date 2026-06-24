@@ -1,0 +1,25 @@
+3 Graph Conceptuals
+Answer the following questions as either True or False and provide a brief explanation:
+1. If a graph with n vertices has n − 1 edges, it must be a tree.
+
+Answer: False
+cycle hay chu trình có thể tồn tại, dẫn tới chưa chắc là một cây
+
+2. The adjacency matrix representation is typically better than the adjacency
+list representation when the graph is very connected.
+
+Answer:
+True: đồ thị dày thì ma trận kề thắng ở thời gian kiểm tra hai đỉnh có kết nối với nhau hay không
+
+3. Every edge is looked at exactly twice in every iteration of DFS on a connected, undirected graph.
+
+Answer: True
+Đúng vì khi duyệt nút kề của u là v và nút kề của v là u
+
+
+4. In BFS, let d(v) be the minimum number of edges between a vertex v and the
+start vertex. For any two vertices u, v in the fringe, |d(u) − d(v)| is always
+less than 2.
+
+Answer: True
+Vì bfs duyệt theo level từng tầng, hàng đợi chứa đỉnh của level đang xét hoặc ở level tiếp theo ở cuối hàng đợi

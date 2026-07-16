@@ -3,7 +3,7 @@ graph, there is no vertex that could possibly yield this order if we perform a p
 What is the minimum number of edges we'd need to add to the graph so that a pre-order traversal could
 yield this order from some start vertex?
 
-![img.png](img1.png)
+![img.png](images/img1.png)
 
 Answer:  2 - 3, 1 - 2, 5 - 6, 3 - 4
 4 edges 

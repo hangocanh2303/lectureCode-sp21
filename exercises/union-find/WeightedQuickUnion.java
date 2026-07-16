@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class WeightedQuickUnion implements DisjointSets{
 
     private int[] parent;
@@ -38,5 +41,20 @@ public class WeightedQuickUnion implements DisjointSets{
             item = parent[item];
         }
         return item;
+    }
+
+    public int size() {
+        return parent.length;
+    }
+
+    /** problem 6 sp21 midterm2 */
+    public Iterator<Integer> setIterator(int p) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for  (int i = 0; i < size(); i += 1) {
+            if (isConnected(p, i)) {
+                list.add(i);
+            }
+        }
+        return list.iterator();
     }
 }

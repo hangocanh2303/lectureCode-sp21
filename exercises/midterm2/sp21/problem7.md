@@ -13,6 +13,6 @@ Consider the code below. Assume that h(N) runs in θ(N) time and returns a boole
     }
 ```
 a) alpha best (50 points). What is the best case runtime for alpha(N)?  
-Answer: theta(1)
+Answer: theta(1)  
 b) alpha worst (50 points). What is the worst case runtime for alpha(N)?  
 Answer: 

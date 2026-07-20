@@ -1,0 +1,17 @@
+public class Random {
+    /** Creates a new random number generator. Runs in Θ(1) time. */
+    public Random() { ... }
+    /** Creates a new random number generator using a seed. If two instances of Random are created
+    with the same seed, they will generate and return identical sequences of numbers. Runs in Θ(1)
+    time. */
+    public Random(long seed) { ... }
+    /** Returns the next pseudorandom int from this random number generator's sequence. Runs in Θ(1)
+    time. */
+    public int nextInt() { ... }
+    /** Returns a pseudorandom int value between 0 (inclusive) and the specified bound (exclusive),
+    drawn from this random number generator's sequence. Runs in Θ(1) time. */
+    public int nextInt(int bound) { ... }
+    /** Returns a pseudorandom int value between origin (inclusive) and the specified bound (
+    exclusive), drawn from this random number generator's sequence. Runs in Θ(1) time. */
+    public int nextInt(int origin, int bound) { ... }
+}

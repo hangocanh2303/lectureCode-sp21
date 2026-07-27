@@ -11,6 +11,7 @@ dfs preorder: A -> B -> C -> F -> D -> G -> H -> E
 dfs postorder: H -> G -> D -> E -> F -> C -> B -> A 
 
 (c) Give the breadth first search traversal starting from vertex A.  
+bfs: A -> B -> E -> C -> F -> D -> G -> H 
 
 (d) Give the order in which Dijkstra’s Algorithm would visit each vertex, starting  
 from vertex A. Sketch the resulting shortest paths tree.  

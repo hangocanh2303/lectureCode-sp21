@@ -17,6 +17,9 @@
       <sourceFolder url="file://$MODULE_DIR$/disc8" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/disc9" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/midterm2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/disc10" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/disc11" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sort" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

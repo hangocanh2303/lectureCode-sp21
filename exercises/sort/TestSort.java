@@ -34,4 +34,12 @@ public class TestSort {
         new MergeSort().sort(input);
         assertArrayEquals(expected, input);
     }
+
+    @Test
+    public void testQuickSort() {
+        int[] input = {6, 3, 7, 2, 8, 1};
+        int[] expected = {1, 2, 3, 6, 7, 8};
+        new QuickSort().sort(input);
+        assertArrayEquals(expected, input);
+    }
 }

@@ -38,8 +38,7 @@ public class QuickSort {
 
         return j;
     }
-
-
+    
     private void swap(int[] arr, int i, int j) {
        int tmp = arr[i];
        arr[i] = arr[j];

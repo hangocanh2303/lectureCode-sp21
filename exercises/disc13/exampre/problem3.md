@@ -17,3 +17,7 @@ arrStudents
 
 A naive approach is to iterate through the `Exams` array, search for the `Student` with 
 the matching `sid` in the `Students` array, and place it in the corresponding position using an auxiliary array.
+
+Create `ExamWrapper`s storing each `Exam` and its original index, radix sort both the `ExamWrapper`s and `Students` by `sid`, 
+then use each `ExamWrapper`’s index to place the corresponding `Student` in the correct position.
+

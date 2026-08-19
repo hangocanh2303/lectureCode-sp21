@@ -3,7 +3,7 @@ As before, provide a brief written justification or counter-example. We will
 only grade your choice of answer, not your justification.
 (e) True or False: Dijkstra’s algorithm will correctly generate a Shortest Paths
 Tree for some graphs that have negative edge weights.  
-Answer: False
+Answer: True
 
 (f) True or False: Multiplying every edge in a graph with positive edge weights by
 some positive constant k will not change the Shortest Paths Tree that Dijkstra’s
@@ -18,4 +18,4 @@ Answer: True
 the graph, there is only one possible Shortest Paths Tree that you can generate
 from S.  
 
-Answer: True 
+Answer: False -> mst is true 
